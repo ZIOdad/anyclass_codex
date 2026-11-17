@@ -12,9 +12,7 @@ const eslintConfig = defineConfig([
     "out/**",
     "build/**",
     "next-env.d.ts",
-    // Agent skills are vendored copies managed by skills-lock.json, and
-    // .claude/worktrees holds duplicate checkouts of this app.
-    ".claude/**",
+    // Agent skills are vendored copies managed by skills-lock.json.
     ".agents/**",
   ]),
 ]);

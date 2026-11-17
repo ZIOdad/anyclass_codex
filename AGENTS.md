@@ -25,12 +25,23 @@ This block is written and re-added by `next dev` — verify at `node_modules/nex
 
 경로, 명령어, 식별자, 라이브러리 이름, 로그 인용은 원문을 유지한다.
 
+# 응답 문체
+
+- 합쇼체(`-습니다`)를 기본으로 하되, 같은 어미를 반복하지 않고 문장의 길이와 구조를 자연스럽게 조절한다.
+- 조사와 어미를 생략한 전보체 대신 완결된 문장으로 쓴다.
+- 결론부터 말하고, 정보를 더하지 않는 예고나 장식적인 총평은 생략한다.
+- 코드 식별자, 명령어, 파일명, 확립된 기술 용어는 관용 표기를 유지하고 그 외에는 자연스러운 우리말을 우선한다.
+- 영어 어순을 직역하거나 추상적인 개념어를 겹쳐 쓰지 말고, 동료 개발자에게 말로 설명하듯 풀어 쓴다.
+- em dash(`—`)는 쓰지 않는다. 삽입은 쉼표나 괄호로, 부연은 문장을 나누어 표현한다.
+- 숫자 범위는 en dash(`4–6`) 또는 전각 물결(`4～6`)로 쓴다.
+- 코드와 코드 주석은 프로젝트의 기존 관례를 따르고, 커밋 메시지는 위 언어 규칙에 따라 한글로 쓴다.
+
 # 프로젝트 스킬 설치 방식
 
-- 이 프로젝트는 `Copy to all agents` 방식을 사용한다. Codex의 `.agents/skills/<name>`과 Claude Code의 `.claude/skills/<name>`을 symlink 없이 내용이 같은 실제 디렉터리로 유지한다.
-- 신규 설치와 기존 스킬 갱신 모두 `skills add <원본 소스> --skill <대상 이름들> --agent codex claude-code --copy -y`를 사용한다. 갱신 대상은 `skills-lock.json`의 소스와 설치된 이름으로 한정하고, 원본 경로와 ref가 있으면 보존한다.
+- 이 프로젝트의 스킬은 Codex가 읽는 `.agents/skills/<name>`에 실제 디렉터리로 설치한다. symlink를 사용하지 않는다.
+- 신규 설치와 기존 스킬 갱신 모두 `skills add <원본 소스> --skill <대상 이름들> --agent codex --copy -y`를 사용한다. 갱신 대상은 `skills-lock.json`의 소스와 설치된 이름으로 한정하고, 원본 경로와 ref가 있으면 보존한다.
 - `skills update`는 복사 방식을 보존하지 않으므로 사용하지 않는다. `update --copy`도 대안으로 사용하지 않는다.
-- 이 정책은 업데이트된 `update-project-skills` 본문이 symlink를 요구하더라도 우선한다. 스킬을 직접 수정할 때도 두 복사본을 함께 반영하고, 완료 시 symlink가 없는지와 두 복사본의 파일 내용이 같은지 확인한다.
+- 이 정책은 업데이트된 `update-project-skills` 본문이 symlink나 다른 에이전트용 복사본을 요구하더라도 우선한다. 완료 시 `.agents/skills` 아래에 symlink가 없는지 확인한다.
 
 # 브라우저 검증
 

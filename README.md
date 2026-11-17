@@ -1,10 +1,8 @@
-# Claude Code Playbook Template
+# Codex Playbook Template
 
-[![Claude Hunt](https://img.shields.io/badge/Claude_Hunt-강의-000000)](https://www.claude-hunt.com)
-[![Docs](https://img.shields.io/badge/docs-claude--hunt-2563eb)](https://docs.claude-hunt.com)
+Codex에서 제품 정의, 기능 구체화, 구현, 검토, 배포까지 이어서 작업할 수 있도록 구성한 Next.js 16 + React 19 템플릿입니다.
 
-> [Claude Hunt](https://www.claude-hunt.com) 강의용 Next.js 16 + React 19 템플릿.
-> 사용법과 워크플로우 문서는 [docs.claude-hunt.com](https://docs.claude-hunt.com)에서 확인하세요.
+이 저장소는 [ZIOdad/anyclass](https://github.com/ZIOdad/anyclass)의 Claude Code용 템플릿을 Codex용으로 변환한 버전입니다.
 
 ## 기술 스택
 
@@ -43,7 +41,7 @@ E2E를 처음 실행하기 전에 브라우저를 한 번 내려받아야 합니
 bunx playwright install chromium
 ```
 
-브라우저가 이미 설치된 환경(예: Claude Code 원격 세션)에서는 내려받는 대신 실행 파일 경로를 지정할 수 있습니다.
+브라우저가 이미 설치된 원격 환경에서는 내려받는 대신 실행 파일 경로를 지정할 수 있습니다.
 
 ```bash
 PLAYWRIGHT_CHROMIUM_PATH=/opt/pw-browsers/chromium bun run test:e2e
@@ -58,7 +56,11 @@ npm i -g agent-browser
 agent-browser install  # 설치된 Chrome이 없을 때만
 ```
 
-## Claude Code 워크플로우
+## Codex에서 사용하기
+
+저장소를 Codex에서 열면 루트의 `AGENTS.md`가 프로젝트 지침으로 적용되고, `.agents/skills`의 스킬을 작업에 맞춰 사용할 수 있습니다. 별도의 Claude Code 설정은 필요하지 않습니다.
+
+## Codex 워크플로우
 
 ```mermaid
 flowchart LR
